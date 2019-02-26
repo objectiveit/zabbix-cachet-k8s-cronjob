@@ -14,3 +14,5 @@
 <br>4 - text. 
 * VALUESCOUNT - zabbix values to get from history
 * METRICID - cachet metricid
+* CACHETAPI - cachet api url
+* CACHET_TOKEN - cachet access token
