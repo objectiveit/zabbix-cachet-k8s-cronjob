@@ -59,6 +59,7 @@ my $respItems = $ua->post($ZABBIXAPI, Content => $postBodyJson);
 my $responseFromZabbix;
 if ($respItems->is_success) {
     $responseFromZabbix = decode_json $respItems->content;
+    print Dumper($responseFromZabbix);
 } else {
     die "Zabbix API HTTP Co nnection Error";
 }
@@ -74,6 +75,6 @@ foreach my $item (@{$responseFromZabbix->{result}}) {
         timestamp => $item->{clock},
     };
     my $resp = $uaCachet->post($CACHET_API . "metrics/$METRIC_ID/points", Content => encode_json $body);
-    #print $resp->content;
+    print $resp->content;
 }
 
