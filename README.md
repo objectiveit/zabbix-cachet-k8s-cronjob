@@ -1,12 +1,14 @@
-# zabbix-cachet-k8s-cronjob
+# zabbix-cachet-k8s-cronjob docker container
 
 # ENVIRONMENT variables to set
 
-* ZABBIXAPI - zabbix api url
+* ZABBIXAPI - zabbix api url {https://zabbix.domain/zabbix//api_jsonrpc.php}
 * ZAPIUSER - zabbix api user
 * ZAPIPASS - zabbi api password
 * ITEMID - zabbix item id
 * ITEMTYPE - item type, required for API requests to history
+* CACHETHQURL - your cachethq url {https://cachethq.domain/api/v1}
+* CACHETHQTOKEN - your cachethq user token
 <br>0 - numeric float; 
 <br>1 - character; 
 <br>2 - log; 
