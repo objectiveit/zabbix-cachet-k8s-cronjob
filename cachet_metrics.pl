@@ -2,6 +2,7 @@
 use strict;
 
 use LWP::UserAgent;
+use IO::Socket::SSL qw();
 use JSON;
 use Data::Dumper;
 
@@ -65,7 +66,12 @@ if ($respItems->is_success) {
 }
 
 # Send to Cachet
-my $uaCachet = LWP::UserAgent->new();
+my $uaCachet = LWP::UserAgent->new(
+    ssl_opts => {
+        SSL_verify_mode => IO::Socket::SSL::SSL_VERIFY_NONE,
+        verify_hostname => 0,
+    }
+);
 $uaCachet->default_header('Content-Type' => 'application/json');
 $uaCachet->default_header('X-Cachet-Token' => $CACHET_TOKEN);
 
