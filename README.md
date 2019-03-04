@@ -8,7 +8,7 @@
 * ITEMID - zabbix item id
 * ITEMTYPE - item type, required for API requests to history
 * CACHETHQURL - your cachethq url {https://cachethq.domain/api/v1}
-* CACHETHQTOKEN - your cachethq user token
+* CACHET_TOKEN - your cachethq user token
 <br>0 - numeric float; 
 <br>1 - character; 
 <br>2 - log; 
