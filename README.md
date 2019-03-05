@@ -1,4 +1,4 @@
-# zabbix-cachet-k8s-cronjob docker container
+This is a kubernetes cronjob with pushes one zabbix (history) metric to a cachet metric.
 
 # ENVIRONMENT variables to set
 
