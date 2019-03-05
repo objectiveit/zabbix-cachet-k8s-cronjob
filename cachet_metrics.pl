@@ -49,6 +49,8 @@ my $postBody = {
         output  => "extend",
         itemids => $ITEM_ID,
         history => $ITEM_TYPE,
+        sortfield => 'clock',
+        sortorder => 'DESC',
         limit   => $VALUES_COUNT,
     },
     id      => ++$ID,
@@ -60,7 +62,7 @@ my $respItems = $ua->post($ZABBIXAPI, Content => $postBodyJson);
 my $responseFromZabbix;
 if ($respItems->is_success) {
     $responseFromZabbix = decode_json $respItems->content;
-    print Dumper($responseFromZabbix);
+    #print Dumper($responseFromZabbix);
 } else {
     die "Zabbix API HTTP Co nnection Error";
 }
